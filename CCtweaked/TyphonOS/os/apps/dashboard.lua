@@ -96,4 +96,4 @@ sidebar:addButton()
 
 
 -- Start the UI
-basalt.autoUpdate()
+basalt.update()
