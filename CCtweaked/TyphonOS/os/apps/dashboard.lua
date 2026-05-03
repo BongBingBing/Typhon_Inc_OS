@@ -18,13 +18,13 @@ topBar:addLabel()
 -- 2. SIDEBAR (Navigation)
 local sidebar = main:addFrame()
     :setPosition(1, 2)
-    :setSize(12, "parent.h - 1")
+    :setSize(12, function() return main:getHeight() - 1 end) -- Use a function for dynamic sizing
     :setBackground(colors.gray)
 
 -- 3. CONTENT AREA (Where the magic happens)
 local content = main:addFrame()
     :setPosition(13, 2)
-    :setSize("parent.w - 12", "parent.h - 1")
+    :setSize(function() return main:getWidth() - 12 end, function() return main:getHeight() - 1 end)
     :setBackground(colors.black)
 
 -- Function to clear content and show new screen
