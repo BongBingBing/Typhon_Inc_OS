@@ -1,3 +1,5 @@
+package.path = package.path .. ";/?.lua;/?.bit"
+
 local basalt = require("basalt")
 
 -- Create the main project
@@ -5,7 +7,6 @@ local main = basalt.createFrame()
 
 -- 1. TOP BAR (Title and Status)
 local topBar = main:addFrame()
-    :setAlpha(0.2)
     :setSize("parent.w", 1)
     :setBackground(colors.blue)
 
