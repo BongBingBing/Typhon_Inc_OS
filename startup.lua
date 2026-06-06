@@ -1,6 +1,6 @@
 local repo = "BongBingBing/Typhon_Inc_OS"
 local branch = "main"
-local folderInRepo = "CCtweaked"
+local folderInRepo = ""
 local scriptName = shell.getRunningProgram() -- Don't delete the script currently running!
 
 -- GitHub API requires a User-Agent
@@ -44,7 +44,7 @@ local function sync(repoPath)
 
     for _, item in ipairs(contents) do
         -- Remove the 'CCtweaked/' prefix for local saving
-        local localPath = item.path:sub(#folderInRepo + 2)
+        local localPath = folderInRepo == "" and item.path or item.path:sub(#folderInRepo + 2)
         if localPath == "" then localPath = item.name end
 
         if item.type == "file" then
